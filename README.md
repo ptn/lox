@@ -1,3 +1,3 @@
 A web server. Eventually it'll be Rack-compliant.
 
-To run the tests: `ruby test/ABC/XYZ_test.rb`
+To run the tests: `rake test`
