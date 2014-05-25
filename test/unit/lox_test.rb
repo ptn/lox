@@ -14,7 +14,10 @@ describe Lox do
       backend = stub
       TCPServer.stubs(:new).returns(backend)
 
-      Lox::Server.expects(:new).with('localhost', Lox::DEFAULT_PORT, backend)
+      Lox::Server.expects(:new).with('localhost',
+                                     Lox::DEFAULT_PORT,
+                                     backend,
+                                     nil)
       Lox.new('localhost', Lox::DEFAULT_PORT) {}
     end
   end
