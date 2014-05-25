@@ -5,5 +5,12 @@ require_relative '../lib/lox'
 puts "Listening on port #{Lox::DEFAULT_PORT}..."
 
 Lox.run('localhost', Lox::DEFAULT_PORT) do |client|
-  client.puts 'hi'
+  puts "Connection: #{client.inspect}"
+  response = "\
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 2
+
+hi"
+  client.puts response
 end
