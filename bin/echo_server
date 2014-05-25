@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+require_relative '../lib/lox'
+
+puts "Listening on port #{Lox::DEFAULT_PORT}..."
+
+Lox.run('localhost', Lox::DEFAULT_PORT) do |client|
+  client.puts 'hi'
+end

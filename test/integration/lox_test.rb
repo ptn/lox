@@ -15,5 +15,6 @@ describe Lox do
     client = TCPSocket.new('localhost', Lox::DEFAULT_PORT)
     client.puts "Test"
     client.close
+    @server_thread.kill
   end
 end

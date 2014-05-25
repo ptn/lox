@@ -11,6 +11,9 @@ module Lox
   end
 
   def self.run(hostname, port, &blk)
-    new(hostname, port, &blk).accept
+    server = new(hostname, port, &blk)
+    loop do
+      server.accept
+    end
   end
 end
